@@ -1,0 +1,29 @@
+<!-- Inquiry Modal -->
+<div class="modal fade" tabindex="-1" id="inquiryModal">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <h3 class="modal-title text-black text-center h5" id="inquiryModalLabel">Kontakt mig <mark class="lead">her</mark></h3>
+                <h3 class="text-black text-center h5"><mark class="lead">eller</mark> på<a class="align-middle pl-4" title="Tommy Hedelund - Facebook" target="_blank"
+                                                               href="https://www.facebook.com/tommy.hedelund"><i class="fab fa-facebook-square fa-fw fa-custom-size"></i></a></h3>
+                <form id="contactform" action="{% url 'contact' %}" method="post" novalidate>
+                    {% csrf_token %}
+                    <!-- reCAPTCHA input -->
+                    <input type="hidden" id="recaptcha" name="g-recaptcha-response">
+
+                    {{ form }}
+
+                    <hr>
+                    <div class="d-grid gap-2 col-6 mx-auto">
+                        <input type="submit" value="Send" class="btn btn-outline-success">
+                    </div>
+
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
